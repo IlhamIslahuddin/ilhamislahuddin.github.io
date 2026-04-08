@@ -1,3 +1,277 @@
-<h1 align="center">Welcome to my Portfolio Website</h1>
-<a href="github.com/IlhamIslahuddin"></a><p>Link to my GitHub: IlhamIslahuddin</p>
-<iframe frameborder="0" src="https://itch.io/embed/4310406?border_width=3" width="556" height="171"><a href="https://hacodesov.itch.io/thisisagame">thisisagame.exe by Hacodesov, j_aye</a></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ilham | Software Engineer</title>
+
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #161a23;
+      --text: #e6e9ef;
+      --subtle: #9aa3b2;
+      --accent: #6c8cff;
+    }
+
+    body.light {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1a1d23;
+      --subtle: #5c6472;
+      --accent: #4f6df5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.25s ease, color 0.25s ease;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .title-wrap {
+      max-width: 70%;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      color: var(--subtle);
+      margin-top: 0.4rem;
+    }
+
+    nav {
+      margin-top: 1.2rem;
+    }
+
+    nav a {
+      margin-right: 1.2rem;
+      text-decoration: none;
+      color: var(--subtle);
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .toggle {
+      border: 1px solid var(--card);
+      background: var(--card);
+      color: var(--text);
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+
+    .toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc {
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: rgba(108, 140, 255, 0.15);
+      color: var(--accent);
+      padding: 3px 7px;
+      border-radius: 6px;
+      margin-right: 5px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+
+    .contact a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--subtle);
+      font-size: 0.85rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .title-wrap {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div class="title-wrap">
+        <h1>Ilham</h1>
+        <div class="subtitle">Aspiring Software Engineer</div>
+
+        <nav>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <button class="toggle" id="themeToggle">Light</button>
+    </header>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="card">
+        <div class="project-title">thisisagame.exe </div>
+        <div class="project-desc">
+          thisisagame.exe is a web game made for the Brackeys Game Jam 2026.1. I worked with a my team of artists, sound designers and writers to create the game in under a week.
+          <iframe frameborder="0" src="https://itch.io/embed/4310406?border_width=3" width="556" height="171"><a href="https://hacodesov.itch.io/thisisagame">thisisagame.exe by Hacodesov, j_aye</a></iframe>
+        </div>
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">API</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="project-title">Project Two</div>
+        <div class="project-desc">
+          Another project. Keep it simple and honest.
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Automation</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm an aspiring software engineer focused on building things that are
+        simple, reliable, and actually useful. Currently learning through
+        projects and experimentation.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="mailto:you@example.com">Email</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Your Name
+    </footer>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light');
+      toggle.textContent = 'Dark';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+
+      if (body.classList.contains('light')) {
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = 'Dark';
+      } else {
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = 'Light';
+      }
+    });
+  </script>
+
+</body>
+</html>
