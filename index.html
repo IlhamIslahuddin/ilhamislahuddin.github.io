@@ -271,7 +271,7 @@
 </section>
 
 <section id="about">
-  <h2>About</h2>
+  <h2>About Me</h2>
   <p>
     I'm an aspiring software engineer focused on building useful and unique projects.
     Currently learning through hands-on development and experimentation.
@@ -281,12 +281,12 @@
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact">
-    <a href="https://github.com/IlhamIslahuddin">GitHub</a>
-    <a href="https://www.linkedin.com/in/ilham-teh/">LinkedIn</a>
-    <a href="mailto:ilhamteh118@gmail.com">Email</a>
+    <a href="https://github.com/IlhamIslahuddin" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/ilham-teh/" target="_blank">LinkedIn</a>
+    <a href="mailto:ilhamteh118@gmail.com" target="_blank">Email</a>
   </div>
 </section>
-  </div>
+</div>
 
 <script>
   const toggle = document.getElementById('themeToggle');
@@ -294,7 +294,12 @@
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('light');
-    toggle.textContent = body.classList.contains('light') ? 'Dark' : 'Light';
+
+    if (body.classList.contains('light')) {
+      toggle.textContent = 'Dark';
+    } else {
+      toggle.textContent = 'Light';
+    }
   });
 </script>
 
