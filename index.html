@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -26,6 +27,10 @@
       padding: 0;
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -86,12 +91,70 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 0.85rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .project-title a {
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text);
       transition: 0.2s;
     }
 
-    .toggle:hover {
-      border-color: var(--accent);
+    .project-title a:hover {
       color: var(--accent);
+    }
+
+    .project-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-top: 0.5rem;
+    }
+
+    .project-content img,
+    .project-content iframe {
+      width: 160px;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .project-content iframe {
+      height: 170px;
+      border: none;
+    }
+
+    .project-text {
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: rgba(108, 140, 255, 0.2);
+      color: var(--accent);
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-right: 5px;
+      font-weight: 500;
     }
 
     section {
@@ -104,166 +167,124 @@
       color: var(--accent);
     }
 
-    .card {
-      background: var(--card);
-      padding: 1.1rem;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
-
-    .project-title {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .tags {
-      margin-top: 0.5rem;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      background: rgba(108, 140, 255, 0.15);
-      color: var(--accent);
-      padding: 3px 7px;
-      border-radius: 6px;
-      margin-right: 5px;
-    }
-
     .contact a {
-      display: inline-block;
       margin-right: 1rem;
-      color: var(--text);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: 0.2s;
+      color: var(--text);
     }
 
     .contact a:hover {
-      border-color: var(--accent);
       color: var(--accent);
     }
-    
-    .project-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-    }
-    
-    .project-content img {
-      width: 150px;
-      height: auto;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-    
-    .project-content iframe {
-      width: 100%;
-      max-width: 100%;
-      border: none;
-      border-radius: 8px;
-      display: block;
-    }
-    
-    .project-text {
-      color: var(--subtle);
-      font-size: 0.95rem;
-    }
-
 
     @media (max-width: 600px) {
       header {
         flex-direction: column;
-        align-items: flex-start;
       }
 
       .title-wrap {
         max-width: 100%;
       }
 
-      h1 {
-        font-size: 2rem;
+      .project-content {
+        flex-direction: column;
+      }
+
+      .project-content img,
+      .project-content iframe {
+        width: 100%;
       }
     }
   </style>
+
 </head>
 
 <body>
   <div class="container">
 
-    <header>
-      <div class="title-wrap">
-        <h1>Ilham</h1>
-        <div class="subtitle">Aspiring Software Engineer</div>
+```
+<header>
+  <div class="title-wrap">
+    <h1>Ilham</h1>
+    <div class="subtitle">Aspiring Software Engineer</div>
 
-        <nav>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <button class="toggle" id="themeToggle">Light</button>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  
+  <div class="card">
+    <div class="project-title">
+      <a href="https://hacodesov.itch.io/thisisagame" target="_blank">
+        thisisagame.exe ↗
+      </a>
+    </div>
+
+    <div class="project-content">
+      <iframe src="https://itch.io/embed/4310406"></iframe>
+
+      <div class="project-text">
+        Built for Brackeys Game Jam 2026.1, this project was developed in under a week. 
+        I worked as the sole programmer, implementing gameplay systems and integrating assets 
+        from a multidisciplinary team.
       </div>
+    </div>
 
-      <button class="toggle" id="themeToggle">Light</button>
-    </header>
+    <div class="tags">
+      <span class="tag">Game Dev</span>
+    </div>
+  </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
+  <div class="card">
+    <div class="project-title">
+      <a href="https://github.com/IlhamIslahuddin/Python-Notepad" target="_blank">
+        Personal Text Editor ↗
+      </a>
+    </div>
 
-      <div class="card">
-        <div class="project-title">thisisagame.exe </div>
-        <div class="project-content">
-          <div class="project-text">
-            thisisagame.exe is a game hosted on itch.io made for the Brackeys Game Jam 2026.1. I worked as the sole programmer with my team of artists, sound designers and writers to create the game in under a week.
-          </div>
-          <iframe frameborder="0" src="https://itch.io/embed/4310406?border_width=3" width="556" height="171"><a href="https://hacodesov.itch.io/thisisagame">thisisagame.exe by Hacodesov, j_aye</a></iframe>
-        </div>
-        <div class="tags">
-          <span class="tag">Game Development</span>
-        </div>
+    <div class="project-content">
+      <img src="Python-Notepad-Example.png" alt="Text editor screenshot">
+
+      <div class="project-text">
+        Developed a desktop text editor using Python and Tkinter, featuring file handling, 
+        real-time character counting, and a simple GUI. Focused on learning event-driven 
+        programming and interface design.
       </div>
+    </div>
 
-      <div class="card">
-        <div class="project-title">Personal Text Editor </div>
-        <div class="project-content">
-          <div class="project-text">
-            This was my first time working to create an app with a user interface. 
-            The text editor was made with the tkinter library and has many features like a character counter, opening and saving txt files and more.
-            
-          <img src="Python-Notepad-Example.png">
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">App</span>
-          </div>
-        </div>
-      </div>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">App</span>
+    </div>
+  </div>
 
+</section>
 
-        
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I'm an aspiring software engineer focused on building useful and unique projects.
+    Currently learning through hands-on development and experimentation.
+  </p>
+</section>
 
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm an aspiring software engineer focused on building things that are
-        useful and unique. Currently learning through projects and experimentation.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact">
-        <a href="https://github.com/IlhamIslahuddin">GitHub</a>
-        <a href="https://www.linkedin.com/in/ilham-teh/">LinkedIn</a>
-        <a href="mailto:ilhamteh118@gmail.com">Email</a>
-      </div>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <a href="https://github.com/IlhamIslahuddin">GitHub</a>
+    <a href="https://www.linkedin.com/in/ilham-teh/">LinkedIn</a>
+    <a href="mailto:ilhamteh118@gmail.com">Email</a>
+  </div>
+</section>
+```
 
   </div>
 
@@ -273,12 +294,7 @@
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('light');
-
-    if (body.classList.contains('light')) {
-      toggle.textContent = 'Dark';
-    } else {
-      toggle.textContent = 'Light';
-    }
+    toggle.textContent = body.classList.contains('light') ? 'Dark' : 'Light';
   });
 </script>
 
