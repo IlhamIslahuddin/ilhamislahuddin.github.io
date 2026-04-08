@@ -155,11 +155,21 @@
       color: var(--accent);
     }
     
-    .project-desc img {
-      width: 120px;
-      float: left;
-      margin-right: 10px;
-      border-radius: 6px;
+    .project-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .project-content img {
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    
+    .project-text {
+      flex: 1;
     }
 
     @media (max-width: 600px) {
@@ -213,16 +223,22 @@
 
       <div class="card">
         <div class="project-title">Personal Text Editor</div>
-        <div class="project-desc">
-          This was my first time working to create an app with a user interface. 
-          The text editor was made with the tkinter library and has many features like a character counter, opening and saving txt files and more.
+      
+        <div class="project-content">
           <img src="Python-Notepad-Example.png">
-        </div>
+      
+          <div class="project-text">
+            This was my first time working to create an app with a user interface. 
+            The text editor was made with the tkinter library and has many features like a character counter, opening and saving txt files and more.
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">App</span>
+          </div>
         </div>
       </div>
+
+
+        
 
     </section>
 
