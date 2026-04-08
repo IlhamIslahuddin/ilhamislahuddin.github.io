@@ -250,28 +250,20 @@
 
   </div>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const body = document.body;
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
 
-    // load saved theme
-    if (localStorage.getItem('theme') === 'light') {
-      body.classList.add('light');
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+
+    if (body.classList.contains('light')) {
       toggle.textContent = 'Dark';
+    } else {
+      toggle.textContent = 'Light';
     }
-
-    toggle.addEventListener('click', () => {
-      body.classList.toggle('light');
-
-      if (body.classList.contains('light')) {
-        localStorage.setItem('theme', 'light');
-        toggle.textContent = 'Dark';
-      } else {
-        localStorage.setItem('theme', 'dark');
-        toggle.textContent = 'Light';
-      }
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
