@@ -122,11 +122,6 @@
       margin-bottom: 0.25rem;
     }
 
-    .project-desc {
-      color: var(--subtle);
-      font-size: 0.95rem;
-    }
-
     .tags {
       margin-top: 0.5rem;
     }
@@ -169,8 +164,10 @@
     }
     
     .project-text {
-      flex: 1;
+      color: var(--subtle);
+      font-size: 0.95rem;
     }
+
 
     @media (max-width: 600px) {
       header {
@@ -212,7 +209,8 @@
 
       <div class="card">
         <div class="project-title">thisisagame.exe </div>
-        <div class="project-desc">
+        <div class="project-content">
+          <div class="project-text">
           thisisagame.exe is a game hosted on itch.io made for the Brackeys Game Jam 2026.1. I worked as the sole programmer with my team of artists, sound designers and writers to create the game in under a week.
           <iframe frameborder="0" src="https://itch.io/embed/4310406?border_width=3" width="556" height="171"><a href="https://hacodesov.itch.io/thisisagame">thisisagame.exe by Hacodesov, j_aye</a></iframe>
         </div>
@@ -222,14 +220,13 @@
       </div>
 
       <div class="card">
-        <div class="project-title">Personal Text Editor</div>
-      
+        <div class="project-title">Personal Text Editor </div>
         <div class="project-content">
-          <img src="Python-Notepad-Example.png">
-      
           <div class="project-text">
             This was my first time working to create an app with a user interface. 
             The text editor was made with the tkinter library and has many features like a character counter, opening and saving txt files and more.
+            
+          <img src="Python-Notepad-Example.png">
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">App</span>
